@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Portal Nahora de Publicações</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">Portal<span>Nahora</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                    <li><button id="adminLoginBtn">Admin</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Admin Panel -->
+    <div class="container admin-panel" id="adminPanel" style="display: none;">
+        <h2>Painel Administrativo</h2>
+        <div class="admin-controls">
+            <button class="btn btn-primary" id="addPostBtn">Adicionar Publicação</button>
+            <button class="btn btn-primary" id="addPhotoBtn">Adicionar Foto</button>
+            <button class="btn btn-primary" id="addAdBtn">Adicionar Anúncio</button>
+            <button class="btn btn-danger" id="logoutBtn">Sair</button>
+        </div>
+    </div>
+
+    <!-- Alert Banner -->
+    <div class="container alert-banner" id="alertBanner">
+        <!-- Será preenchido dinamicamente -->
+    </div>
+
+    <!-- Main Content -->
+    <div class="container content">
+        <!-- Posts Section -->
+        <main class="posts-section">
+            <h2>Publicações Recentes</h2>
+            <div id="postsContainer">
+                <div class="loading">Carregando publicações...</div>
+            </div>
+        </main>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h3>Informações</h3>
+            <p>Bem-vindo ao meu portal de publicações. Aqui você encontra minhas últimas atualizações, fotos e anúncios.</p>
+            
+            <div class="contact-info" id="contactInfo">
+                <!-- Será preenchido dinamicamente -->
+            </div>
+        </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; Portal Nahora - Desenvolvido por Evandro Santo</p>
+        </div>
+    </footer>
+
+    <!-- Modal Login -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Login Administrativo</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginUsername">Usuário</label>
+                    <input type="text" id="loginUsername" value="admin" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Senha</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Entrar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Adicionar Conteúdo -->
+    <div class="modal" id="addContentModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Adicionar Conteúdo</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <form id="contentForm">
+                <div class="form-group">
+                    <label for="contentTitle">Título</label>
+                    <input type="text" id="contentTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="contentImage">URL da Imagem (opcional)</label>
+                    <input type="text" id="contentImage" placeholder="https://exemplo.com/imagem.jpg">
+                </div>
+                <div class="form-group">
+                    <label for="contentType">Tipo</label>
+                    <select id="contentType" required>
+                        <option value="publicacao">Publicação</option>
+                        <option value="foto">Foto</option>
+                        <option value="anuncio">Anúncio</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="contentText">Conteúdo</label>
+                    <textarea id="contentText" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Publicar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

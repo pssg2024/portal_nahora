@@ -1,0 +1,553 @@
+/* Importação de fontes do Google - Essencial para um visual profissional */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@400;500&display=swap');
+
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --accent-color: #e74c3c;
+    --light-color: #ecf0f1;
+    --dark-color: #34495e;
+    --success-color: #2ecc71;
+    
+    /* Novas variáveis para polimento */
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+    --shadow-light: 0 2px 10px rgba(0,0,0,0.08);
+    --shadow-hover: 0 4px 15px rgba(0,0,0,0.12);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Adiciona rolagem suave para os links âncora (ex: #home) */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+    /* Aplica a nova fonte base */
+    font-family: var(--font-body);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* --- Header --- */
+header {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    /* Deixa o header fixo no topo (opcional, mas profissional) */
+    position: sticky;
+    top: 0;
+    z-index: 900;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    /* Aplica a fonte de destaque */
+    font-family: var(--font-heading);
+}
+
+.logo span {
+    color: var(--primary-color);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+nav ul li {
+    margin-left: 1.5rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    /* Transição suave para o hover */
+    transition: color 0.3s ease;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent; /* Efeito de sublinhado no hover */
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color); /* Efeito de sublinhado no hover */
+}
+
+nav ul li button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    /* Transição suave para o hover */
+    transition: all 0.3s ease;
+}
+
+/* --- Botões e Admin --- */
+.admin-panel {
+    background-color: var(--dark-color);
+    padding: 1rem; /* Reduzido um pouco */
+    margin-top: 2rem; /* Adicionado espaço do header */
+    margin-bottom: 2rem;
+    border-radius: 8px; /* Mais arredondado */
+    box-shadow: var(--shadow-light);
+}
+
+.admin-panel h2 {
+    color: white;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-family: var(--font-heading);
+}
+
+.admin-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.btn {
+    padding: 0.6rem 1.2rem; /* Botões ligeiramente maiores */
+    border: none;
+    border-radius: 5px; /* Bordas mais suaves */
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease; /* Transição mais suave */
+    text-transform: uppercase; /* Aparência mais "oficial" */
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-danger {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.btn:hover {
+    opacity: 0.9;
+    /* Efeito de "lift" (elevar) no hover */
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* --- Alertas --- */
+.alert-banner {
+    background-color: #f39c12;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow-light);
+}
+
+.alert-banner a {
+    color: white;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* --- Layout Principal --- */
+.content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* --- Seção de Posts --- */
+.posts-section h2 {
+    margin-bottom: 1.5rem;
+    color: var(--secondary-color);
+    /* Remove a borda datada e usa a fonte de título */
+    font-family: var(--font-heading);
+    font-size: 2rem;
+}
+
+.post {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    /* Sombra mais suave */
+    box-shadow: var(--shadow-light);
+    /* Adiciona transição para o efeito de hover */
+    transition: all 0.3s ease;
+}
+
+.post:hover {
+    /* Efeito de "lift" (elevar) no hover */
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.post-title {
+    font-size: 1.6rem;
+    color: var(--secondary-color);
+    /* Fonte de título */
+    font-family: var(--font-heading);
+}
+
+.post-date {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    flex-shrink: 0; /* Impede que a data quebre */
+    margin-left: 1rem;
+}
+
+.post-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.post-content {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+/* --- Comentários --- */
+.comments-section {
+    margin-top: 1.5rem;
+}
+
+.comments-section h3 {
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+    font-family: var(--font-heading);
+}
+
+.comment-form {
+    margin-bottom: 1.5rem;
+}
+
+.comment-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: vertical;
+    min-height: 80px;
+    margin-bottom: 0.5rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito de Foco */
+.comment-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+.comment {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    position: relative;
+    border-left: 3px solid var(--primary-color); /* Destaque visual */
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.comment-author {
+    font-weight: bold;
+    color: var(--secondary-color);
+    font-family: var(--font-heading);
+}
+
+.comment-date {
+    color: #7f8c8d;
+    font-size: 0.8rem;
+}
+
+.delete-comment {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: var(--accent-color);
+    cursor: pointer;
+    font-size: 0.9rem;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.delete-comment:hover {
+    opacity: 1;
+}
+
+/* --- Sidebar --- */
+.sidebar {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-light);
+    height: fit-content; /* Faz a sidebar "grudar" no topo ao rolar */
+    position: sticky;
+    top: 100px; /* (Altura do header + margem) */
+}
+
+.sidebar h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    /* Remove a borda datada */
+    padding-bottom: 0.5rem;
+    font-family: var(--font-heading);
+}
+
+.contact-info {
+    background-color: #e8f4fc;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+.contact-info p {
+    margin-bottom: 0.5rem;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--secondary-color);
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 2rem;
+}
+
+/* --- Modal (Com Animações) --- */
+.modal {
+    display: none; /* Mantido para ser controlado pelo JS */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6); /* Fundo um pouco mais escuro */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    
+    /* Animação de fade-in para o fundo */
+    animation: fadeIn 0.3s ease-out;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    
+    /* Animação de "zoom" para o conteúdo */
+    animation: scaleUp 0.3s ease-out;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee; /* Separação visual */
+}
+
+.modal-header h3 {
+    font-family: var(--font-heading);
+    color: var(--secondary-color);
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    font-size: 1.8rem; /* Botão de fechar maior */
+    cursor: pointer;
+    color: #7f8c8d;
+    line-height: 1;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.close-modal:hover {
+    color: var(--accent-color);
+    transform: rotate(90deg); /* Efeito de rotação */
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito de Foco para todos os inputs */
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+/* --- Estados de Loading e Erro --- */
+.loading {
+    text-align: center;
+    padding: 2rem;
+    color: #7f8c8d;
+    font-size: 1.2rem;
+}
+
+.error {
+    background-color: #fbebee; /* Cor mais suave */
+    color: var(--accent-color);
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--accent-color);
+}
+
+/* --- Responsividade (Ajustes para Mobile) --- */
+
+@media (max-width: 768px) {
+    .content {
+        grid-template-columns: 1fr;
+    }
+    
+    .sidebar {
+        /* Remove o "sticky" em telas menores */
+        position: static;
+        top: auto;
+    }
+    
+    .header-content {
+        /* Empilha o logo e a navegação */
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    nav ul {
+        /* Centraliza os links e permite quebra de linha */
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    nav ul li {
+        margin-left: 0.5rem;
+    }
+    
+    .post-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .post, .sidebar, .admin-panel {
+        padding: 1rem; /* Menos padding em telas pequenas */
+    }
+    
+    .post-title {
+        font-size: 1.3rem;
+    }
+    
+    .admin-controls {
+        /* Botões em coluna */
+        flex-direction: column;
+    }
+
+    .btn {
+        /* Botões ocupam 100% da largura */
+        width: 100%; 
+    }
+    
+    .modal-content {
+        padding: 1.5rem;
+    }
+}
+
+/* --- Keyframes para Animações --- */
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+    from { 
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to { 
+        transform: scale(1);
+        opacity: 1;
+    }
+}
