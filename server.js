@@ -5,16 +5,26 @@ const bcrypt = require('bcryptjs');
 const cors = require('cors');
 
 const app = express();
+// Usa a porta fornecida pelo Heroku (process.env.PORT) ou 3000 localmente
 const port = process.env.PORT || 3000;
 
-// Configuração do banco - USE SUA SENHA 230655
+// =========================================================================
+// 💡 ALTERAÇÃO CHAVE AQUI PARA O BANCO DE DADOS 💡
+// =========================================================================
 const pool = new Pool({
-    user: 'postgres',
-    host: 'localhost',
-    database: 'portal_publicacoes',
-    password: '230655',  // SUA SENHA AQUI
-    port: 5432,
+    // 1. connectionString:
+    // Tenta usar a variável DATABASE_URL (configurada pelo Heroku Add-on)
+    // Se não existir, usa sua string de conexão local como fallback.
+    connectionString: process.env.DATABASE_URL || 'postgres://postgres:230655@localhost:5432/portal_publicacoes',
+    
+    // 2. Configuração SSL:
+    // O Heroku exige SSL para conexão remota. 
+    // Só aplica a configuração SSL se a DATABASE_URL estiver presente (ambiente de produção).
+    ssl: process.env.DATABASE_URL ? { 
+        rejectUnauthorized: false // Necessário para a conexão com o Heroku
+    } : false, // No ambiente local (localhost), desliga o SSL.
 });
+// =========================================================================
 
 // Middleware
 app.use(cors());
